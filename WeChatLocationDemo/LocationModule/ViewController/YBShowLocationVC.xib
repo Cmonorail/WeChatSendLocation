@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YBShowLocationVC">
+            <connections>
+                <outlet property="addresslabel" destination="nmO-8r-pUM" id="iHc-uC-Cme"/>
+                <outlet property="locationBtn" destination="9iz-yu-o1D" id="Lo6-HA-JMK"/>
+                <outlet property="mapView" destination="DC7-L3-8OP" id="RaF-VQ-Zvi"/>
+                <outlet property="namelabel" destination="gxV-nP-wlL" id="hwW-fy-blp"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DC7-L3-8OP" customClass="BMKMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="576.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iz-yu-o1D">
+                    <rect key="frame" x="305" y="496" width="50" height="50"/>
+                    <state key="normal" image="locationBtnIcon"/>
+                    <state key="selected" image="locationBtnSelectedIcon"/>
+                    <connections>
+                        <action selector="locationAction:" destination="-1" eventType="touchUpInside" id="H22-88-6QK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yz1-tY-ggM">
+                    <rect key="frame" x="15" y="35" width="30" height="30"/>
+                    <state key="normal" image="squarBackIcon"/>
+                    <connections>
+                        <action selector="squalBackAction:" destination="-1" eventType="touchUpInside" id="suZ-Yq-jM1"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoU-bL-ZM2">
+                    <rect key="frame" x="0.0" y="576" width="375" height="90.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxV-nP-wlL">
+                            <rect key="frame" x="15" y="60.5" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmO-8r-pUM">
+                            <rect key="frame" x="15" y="66" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFt-Wa-I6o">
+                            <rect key="frame" x="306" y="20" width="49" height="49"/>
+                            <state key="normal" image="navigationIcon"/>
+                            <state key="highlighted" image="navigationIcon"/>
+                            <connections>
+                                <action selector="showMenuAction:" destination="-1" eventType="touchUpInside" id="MgA-dg-4Wc"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="nmO-8r-pUM" firstAttribute="leading" secondItem="gxV-nP-wlL" secondAttribute="leading" id="9cP-NV-tM5"/>
+                        <constraint firstItem="tFt-Wa-I6o" firstAttribute="centerY" secondItem="hoU-bL-ZM2" secondAttribute="centerY" id="Dr5-sb-I7t"/>
+                        <constraint firstItem="nmO-8r-pUM" firstAttribute="leading" secondItem="hoU-bL-ZM2" secondAttribute="leading" constant="15.5" id="PYY-Rg-YJj"/>
+                        <constraint firstItem="tFt-Wa-I6o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nmO-8r-pUM" secondAttribute="trailing" constant="15" id="SFf-Kn-MJS"/>
+                        <constraint firstItem="tFt-Wa-I6o" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gxV-nP-wlL" secondAttribute="trailing" constant="15" id="TFG-5V-vej"/>
+                        <constraint firstAttribute="trailing" secondItem="tFt-Wa-I6o" secondAttribute="trailing" constant="20" id="bYd-Re-kxc"/>
+                        <constraint firstAttribute="bottom" secondItem="nmO-8r-pUM" secondAttribute="bottom" constant="24.5" id="hXl-1i-xlm"/>
+                        <constraint firstItem="nmO-8r-pUM" firstAttribute="top" secondItem="gxV-nP-wlL" secondAttribute="bottom" constant="5.5" id="tKB-bF-nQx"/>
+                        <constraint firstAttribute="height" constant="90.5" id="uEW-mA-H7x"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="hoU-bL-ZM2" secondAttribute="bottom" id="0E8-VA-iGU"/>
+                <constraint firstItem="hoU-bL-ZM2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="F7f-lA-GU9"/>
+                <constraint firstAttribute="trailing" secondItem="9iz-yu-o1D" secondAttribute="trailing" constant="20" id="Ujd-yo-ipx"/>
+                <constraint firstItem="DC7-L3-8OP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xc6-Nc-Kjm"/>
+                <constraint firstItem="DC7-L3-8OP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZPg-I0-8fi"/>
+                <constraint firstAttribute="trailing" secondItem="DC7-L3-8OP" secondAttribute="trailing" id="fyC-8U-0cR"/>
+                <constraint firstItem="Yz1-tY-ggM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="gnO-so-WaW"/>
+                <constraint firstItem="hoU-bL-ZM2" firstAttribute="top" secondItem="9iz-yu-o1D" secondAttribute="bottom" constant="30" id="qiL-4R-SNe"/>
+                <constraint firstAttribute="trailing" secondItem="hoU-bL-ZM2" secondAttribute="trailing" id="rti-1D-1tX"/>
+                <constraint firstItem="hoU-bL-ZM2" firstAttribute="top" secondItem="DC7-L3-8OP" secondAttribute="bottom" id="ugz-Uc-FVk"/>
+                <constraint firstItem="Yz1-tY-ggM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="yYS-5x-XjL"/>
+            </constraints>
+            <point key="canvasLocation" x="201" y="60"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="locationBtnIcon" width="50" height="50"/>
+        <image name="locationBtnSelectedIcon" width="50" height="50"/>
+        <image name="navigationIcon" width="49" height="49"/>
+        <image name="squarBackIcon" width="30" height="30"/>
+    </resources>
+</document>

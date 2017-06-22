@@ -1,0 +1,6 @@
+framework module Pods_WeChatLocationDemo {
+  umbrella header "Pods-WeChatLocationDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

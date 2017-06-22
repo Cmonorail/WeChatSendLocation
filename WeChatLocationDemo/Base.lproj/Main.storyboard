@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cWw-yk-zxQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpK-C7-Ybr">
+                                <rect key="frame" x="156" y="231" width="62" height="30"/>
+                                <state key="normal" title="选择地址"/>
+                                <connections>
+                                    <action selector="selectAddressAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V9Z-3K-utw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdO-zl-pbq">
+                                <rect key="frame" x="156" y="301" width="62" height="30"/>
+                                <state key="normal" title="查看地址"/>
+                                <connections>
+                                    <action selector="showAddressAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ep-TF-gPd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBe-2a-KQp">
+                                <rect key="frame" x="187" y="189" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NpK-C7-Ybr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3D7-i2-uVa"/>
+                            <constraint firstItem="GdO-zl-pbq" firstAttribute="centerX" secondItem="NpK-C7-Ybr" secondAttribute="centerX" id="ChF-rQ-yUc"/>
+                            <constraint firstItem="KBe-2a-KQp" firstAttribute="centerX" secondItem="NpK-C7-Ybr" secondAttribute="centerX" id="brR-R9-KER"/>
+                            <constraint firstItem="NpK-C7-Ybr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="167" id="hN8-h5-2qp"/>
+                            <constraint firstItem="NpK-C7-Ybr" firstAttribute="top" secondItem="KBe-2a-KQp" secondAttribute="bottom" constant="42" id="keu-3d-8S6"/>
+                            <constraint firstItem="GdO-zl-pbq" firstAttribute="top" secondItem="NpK-C7-Ybr" secondAttribute="bottom" constant="40" id="r23-P1-8H6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zxb-4R-0Rk"/>
+                    <connections>
+                        <outlet property="addresslabel" destination="KBe-2a-KQp" id="qxA-tZ-Bb1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="518" y="182"/>
+        </scene>
+        <!--Custom Navigation Controller-->
+        <scene sceneID="g0H-WO-zPf">
+            <objects>
+                <navigationController id="cWw-yk-zxQ" customClass="CustomNavigationController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cRn-RL-oor">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lxH-D9-T30"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zml-dy-ug8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-317" y="183"/>
+        </scene>
+    </scenes>
+</document>
