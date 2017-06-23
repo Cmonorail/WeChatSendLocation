@@ -2,17 +2,17 @@
 
 #### 效果图
 
-![发送位置](http://oj8gff6qn.bkt.clouddn.com/0DD3F62B1E394520E670DBCA038C7045.png)
+![选取地址](http://oj8gff6qn.bkt.clouddn.com/0DD3F62B1E394520E670DBCA038C7045.png?imageMogr2/auto-orient/thumbnail/375x)
 
 
 
 
 
-![模糊搜索,搜索建议](http://oj8gff6qn.bkt.clouddn.com/CB18831471CF0D1B65E8A5697388ABEB.png)
+![模糊搜索,搜索建议](http://oj8gff6qn.bkt.clouddn.com/CB18831471CF0D1B65E8A5697388ABEB.png?imageMogr2/auto-orient/thumbnail/375x)
 
 
 
 
 
-![查看位置](http://oj8gff6qn.bkt.clouddn.com/878D40DD8181A02A863A3D990928297D.png)
+![查看位置](http://oj8gff6qn.bkt.clouddn.com/878D40DD8181A02A863A3D990928297D.png?imageMogr2/auto-orient/thumbnail/375x)
 
