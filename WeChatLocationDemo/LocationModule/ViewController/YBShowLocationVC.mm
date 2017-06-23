@@ -166,6 +166,7 @@
 }
 
 
+#pragma mark - Target Method
 - (void)showRoute{
 
     BMKPlanNode* start = [[BMKPlanNode alloc]init];
@@ -190,6 +191,7 @@
     YBShowPanoranaVC *vc = [[YBShowPanoranaVC alloc] initWithlat:self.coordinate.latitude lon:self.coordinate.longitude];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 
 - (void)baiduMapNavigation{
     

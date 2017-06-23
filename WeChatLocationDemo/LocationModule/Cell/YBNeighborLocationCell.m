@@ -40,7 +40,6 @@
 }
 - (NSMutableAttributedString *)highlightKeyword:(NSString *)keyword origintext:(NSString *)origintext{
     NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc] initWithString:origintext];
-
     NSMutableArray *indexArray = @[].mutableCopy;
     for(int i =0; i < [origintext length]; i++)
     {
