@@ -125,7 +125,6 @@
                                 {
                                     
                                 }]];
-    self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [self presentViewController:alertController animated:YES completion:^{}];
     
 }

@@ -132,10 +132,6 @@ static NSString *const kCurrentlocationCellId = @"kCurrentlocationCellId";
     [self.nearbylocations addObjectsFromArray:result.poiList];
     [self.tableView reloadData];
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        //刷新完成
-        self.searchKeyword = @"";
-    });
 }
 
 #pragma mark - BMKLocationServiceDelegate
