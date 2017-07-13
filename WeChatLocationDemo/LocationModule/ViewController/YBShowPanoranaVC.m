@@ -9,8 +9,8 @@
 #import "YBShowPanoranaVC.h"
 #import <BaiduPanoSDK/BaiduPanoramaView.h>
 
+#define kPanoranaKey @"yRaVnE0fOqG1ratuy5bFKyHBGdkKQGm7"
 @interface YBShowPanoranaVC ()
-
 @property (assign, nonatomic) CLLocationCoordinate2D coordinate;
 @property (strong, nonatomic) BaiduPanoramaView  *panoranaView;
 @end
@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     self.title = @"全景展示";
-    self.panoranaView = [[BaiduPanoramaView alloc] initWithFrame:self.view.bounds key:@"yRaVnE0fOqG1ratuy5bFKyHBGdkKQGm7"];
+    self.panoranaView = [[BaiduPanoramaView alloc] initWithFrame:self.view.bounds key:kPanoranaKey];
     [self.panoranaView setPanoramaWithLon:self.coordinate.longitude lat:self.coordinate.latitude];
     [self.view addSubview:self.panoranaView];
 }

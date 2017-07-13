@@ -9,15 +9,12 @@
 #import "YBLocationSearchResultViewController.h"
 #import "YBNeighborLocationCell.h"
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
-@interface YBLocationSearchResultViewController ()<BMKPoiSearchDelegate>
-
-@property (strong, nonatomic) NSMutableArray *searchResultArray;
-@property (strong, nonatomic) BMKPoiSearch *poiSearch;
-
-@end
 
 static NSString *kSearchlocationResutlCellId = @"kSearchlocationResutlCellId";
-
+@interface YBLocationSearchResultViewController ()<BMKPoiSearchDelegate>
+@property (strong, nonatomic) NSMutableArray *searchResultArray;
+@property (strong, nonatomic) BMKPoiSearch *poiSearch;
+@end
 @implementation YBLocationSearchResultViewController
 
 #pragma mark - LifeCycle
