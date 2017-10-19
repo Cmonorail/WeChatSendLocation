@@ -325,7 +325,7 @@
 				TargetAttributes = {
 					1D1A5B851EF4E14300F91BE3 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = SCYPVTSEM7;
+						DevelopmentTeam = YJ9W2ML8XF;
 						ProvisioningStyle = Automatic;
 					};
 					1D1A5BA11EF4E14300F91BE3 = {
@@ -603,7 +603,7 @@
 			baseConfigurationReference = 4A4FC40A62940EAC27AEFA58 /* Pods-WeChatLocationDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SCYPVTSEM7;
+				DEVELOPMENT_TEAM = YJ9W2ML8XF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WeChatLocationDemo/Vender/baiduPanorama",
@@ -621,7 +621,7 @@
 			baseConfigurationReference = 82849E70FA1000AB1D9EFAFA /* Pods-WeChatLocationDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = SCYPVTSEM7;
+				DEVELOPMENT_TEAM = YJ9W2ML8XF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WeChatLocationDemo/Vender/baiduPanorama",

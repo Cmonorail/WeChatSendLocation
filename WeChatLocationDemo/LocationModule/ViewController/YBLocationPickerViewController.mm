@@ -43,7 +43,12 @@ static NSString *const kCurrentlocationCellId = @"kCurrentlocationCellId";
 {
     self = [super init];
     if (self) {
-        _statusBarStyle = UIStatusBarStyleLightContent;
+        if (@available(iOS 11, *)){
+            _statusBarStyle = UIStatusBarStyleDefault;
+        }
+        else{
+            _statusBarStyle = UIStatusBarStyleLightContent;
+        }
         _geocode        = YES;
         _firstlocation  = YES;
     }
@@ -62,11 +67,9 @@ static NSString *const kCurrentlocationCellId = @"kCurrentlocationCellId";
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIBarButtonItem *sendItem = [[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStyleDone target:self action:@selector(saveLocationInfo)];
-    sendItem.tintColor = [UIColor colorWithRed:39/255.0f green:225/255.0f blue:25/255.0f alpha:1];
     self.navigationItem.rightBarButtonItem = sendItem;
     
     UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStyleDone target:self action:@selector(cancel)];
-    cancelItem.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = cancelItem;
     
     //地理编码检索
@@ -79,8 +82,12 @@ static NSString *const kCurrentlocationCellId = @"kCurrentlocationCellId";
     //启动LocationService
     [self.locService startUserLocationService];
     
-    
-    [self.view addSubview:self.searchController.searchBar];
+    if (@available(iOS 11, *)){
+        self.navigationItem.searchController = self.searchController;
+    }
+    else{
+       [self.view addSubview:self.searchController.searchBar];
+    }
     [self.view addSubview:self.mapView];
     [self.view addSubview:self.redPinBtn];
     [self.view addSubview:self.locationBtn];
@@ -114,7 +121,15 @@ static NSString *const kCurrentlocationCellId = @"kCurrentlocationCellId";
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat screentHeight = [UIScreen mainScreen].bounds.size.height;
     
-    self.mapView.frame   = CGRectMake(0,CGRectGetHeight(self.searchController.searchBar.frame), screenWidth,mapHeight);
+    CGFloat mapY = 0.0f;
+    if (@available(iOS 11, *)){
+        mapY = 0.0f;
+    }
+    else{
+        mapY = CGRectGetHeight(self.searchController.searchBar.frame);
+    }
+
+    self.mapView.frame   = CGRectMake(0,mapY, screenWidth,mapHeight);
     self.mapView.mapScaleBarPosition = CGPointMake(scaleBarToleft,CGRectGetHeight(self.mapView.frame)-scaleBarToBottom-self.mapView.mapScaleBarSize.height);
     [self.redPinBtn setFrame:CGRectMake(0, 0, self.redPinBtn.currentImage.size.width, self.redPinBtn.currentImage.size.height)];
     [self.redPinBtn setCenter:self.mapView.center];
@@ -224,10 +239,16 @@ static NSString *const kCurrentlocationCellId = @"kCurrentlocationCellId";
 - (void)willPresentSearchController:(UISearchController *)searchController{
     self.statusBarStyle = UIStatusBarStyleDefault;
     [self setNeedsStatusBarAppearanceUpdate];
+    
 }
 
 - (void)willDismissSearchController:(UISearchController *)searchController{
-    self.statusBarStyle = UIStatusBarStyleLightContent;
+    if (@available(iOS 11, *)){
+        self.statusBarStyle = UIStatusBarStyleDefault;
+    }
+    else{
+        self.statusBarStyle = UIStatusBarStyleLightContent;
+    }
     [self setNeedsStatusBarAppearanceUpdate];
 }
 

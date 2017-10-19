@@ -19,10 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:18]}];
+    if (@available(iOS 11, *)){
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],NSFontAttributeName:[UIFont systemFontOfSize:18]}];
+        self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+        [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
+    }
+    else{
+        [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:18]}];
+        self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:39/255.0f green:225/255.0f blue:25/255.0f alpha:1];
+        [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:17/255.0f green:16/255.0f blue:19/255.0f alpha:1]];
+        
+    }
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:17/255.0f green:16/255.0f blue:19/255.0f alpha:1]];
+    
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle{
